@@ -35,7 +35,7 @@ body {
     display: flex;
     align-items: center;
 
-    padding: 0 40px;
+    padding: 0 45px;
     background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(6px);
 }
@@ -49,13 +49,11 @@ body {
 
 /* Center logo + text */
 .nav-brand {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-
+  
     display: flex;
     align-items: center;
     gap: 18px;
+    margin-right:auto;
 }
 
 .nav-brand {
@@ -105,72 +103,72 @@ body {
 
 .hero-box {
     text-align: center;
-    padding: 40px 55px;
-    max-width: 750px;
-    border-radius: 24px;
-
-    background: rgba(0, 0, 0, 0.35);
-
-    box-shadow:
-        0 0 25px rgba(255, 0, 200, 0.25),
-        0 0 60px rgba(0, 200, 255, 0.25);
+    padding: 0;
+    background: none;
+    box-shadow: none;
 }
 
-.college-name {
+/* ================= COLLEGE NAME (BIG) ================= */
+
+.college-block {
+    text-align: center;
+    margin-bottom: 30px;
+}
+/* ================= COLLEGE NAME STYLE ================= */
+
+.college-block {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Vel Tech High Tech — BIG */
+.college-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;                 /* space between logo & text */
+
+    font-family: "Times New Roman", serif;
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #ced716;
+    margin-bottom: 6px;
+}
+
+
+/* Full college name — MEDIUM */
+.college-sub {
+    font-family: "Times New Roman", serif;
     font-size: 22px;
-    letter-spacing: 3px;
-    color: #ffd966;
-    margin-bottom: 10px;
+    letter-spacing: 0.8px;
+    color: #cfd91a;
+    margin-bottom: 6px;
 }
-.fest-title {
-    position: relative;
-    font-family: 'Samarkan', serif;
-    font-size: 80px;
-    letter-spacing: 4px;
-    margin: 15px 0;
 
-    background: linear-gradient(
-        120deg,
-        #008a7a 0%,
-        #00ff73 20%,
-        #fff6c0 35%,
-        #00ffff 50%,
-        #b89200 65%,
-        #d0ff00 80%,
-        #8a0050 100%
-    );
-    background-size: 250% auto;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation: luxuryShine 4s ease-in-out infinite;
-
-    text-shadow:
-        0 0 8px rgba(255, 215, 0, 0.6),
-        0 0 18px rgba(255, 200, 0, 0.5),
-        0 0 35px rgba(255, 180, 0, 0.4);
+/* Autonomous — GOLD */
+.college-tag {
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #d97706;
+}
+@media (max-width: 768px) {
+    .college-main {
+        font-size: 30px;
+    }
+    .college-sub {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+    .college-tag {
+        font-size: 14px;
+    }
 }
 
 
-.fest-title span {
-    margin-left: 14px;
 
-    background: linear-gradient(
-        120deg,
-        #ffcc00,
-        #fff2b2,
-        #ffcc00
-    );
-    background-size: 200%;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    text-shadow:
-        0 0 12px rgba(255, 204, 0, 0.9),
-        0 0 30px rgba(255, 170, 0, 0.7);
-}
 
 .tagline {
     position: relative;
@@ -529,4 +527,29 @@ section, footer {
     .navbar ul li a {
         font-size: 14px;
     }
+}
+@media (max-width: 768px) {
+    .college-main {
+        font-size: 28px;
+        padding: 0 10px;
+    }
+    .college-tag {
+        font-size: 15px;
+    }
+}
+/* ===== COLOR FIX ONLY FOR AAVISHKAAR 2026 ===== */
+
+.fest-title {
+    font-family: 'Samarkan', serif;
+    font-size: 96px;
+    letter-spacing: 6px;
+    margin: 20px 0;
+    white-space: nowrap;
+    color: #c00000;          /* 🔴 RED for aavishkaar */
+}
+
+/* 2026 white */
+.fest-title span {
+    color: #ffffff;         /* ⚪ WHITE */
+    margin-left: 14px;
 }
