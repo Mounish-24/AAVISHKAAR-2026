@@ -94,11 +94,9 @@ body {
 
 /* ================= HERO SECTION ================= */
 .hero {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 100px;
+    min-height: auto;
+    display: block;          /* ✅ key fix */
+    padding-top: 180px;
 }
 
 .hero-box {
@@ -108,74 +106,48 @@ body {
     box-shadow: none;
 }
 
-/* ================= COLLEGE NAME (BIG) ================= */
-
-.college-block {
-    text-align: center;
-    margin-bottom: 30px;
-}
 /* ================= COLLEGE NAME STYLE ================= */
 
 .college-block {
     text-align: center;
-    margin-bottom: 30px;
+    margin-top: 40px;     /* pushes text DOWN */
+    margin-bottom: 40px;
 }
 
-/* Vel Tech High Tech — BIG */
+/* Vel Tech High Tech */
+/* ===== EXTRA BIG COLLEGE NAME ===== */
+
 .college-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;                 /* space between logo & text */
-
     font-family: "Times New Roman", serif;
-    font-size: 52px;
+    font-size: 78px;     /* 🔥 MORE BIG */
     font-weight: 700;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.8px;
     color: #ced716;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
 }
 
-
-/* Full college name — MEDIUM */
 .college-sub {
     font-family: "Times New Roman", serif;
-    font-size: 22px;
-    letter-spacing: 0.8px;
+    font-size: 34px;     /* 🔥 MORE BIG */
+    letter-spacing: 1.2px;
     color: #cfd91a;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
 }
 
-/* Autonomous — GOLD */
 .college-tag {
     font-family: "Times New Roman", serif;
-    font-size: 20px;
+    font-size: 28px;     /* 🔥 MORE BIG */
     font-weight: 700;
-    letter-spacing: 0.8px;
+    letter-spacing: 1.1px;
     color: #d97706;
 }
-@media (max-width: 768px) {
-    .college-main {
-        font-size: 30px;
-    }
-    .college-sub {
-        font-size: 16px;
-        padding: 0 10px;
-    }
-    .college-tag {
-        font-size: 14px;
-    }
-}
-
-
-
 
 .tagline {
     position: relative;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    margin: 25px 0 35px;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 35px 0 45px;
 
     background: linear-gradient(
         90deg,
@@ -196,22 +168,35 @@ body {
         0 0 6px rgba(255, 255, 255, 0.4),
         0 0 14px rgba(255, 215, 0, 0.3);
 }
+/* FORCE TAGLINE SIZE BELOW AAVISHKAAR 2026 */
+.hero .tagline {
+    font-size: 30px !important;   /* 🔥 BIGGER TEXT */
+    font-weight: 500 !important;
+    letter-spacing: 1.5px !important;
+    margin-top: 30px !important;
+}
+
 
 /* ================= BUTTONS ================= */
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 22px;
-    flex-wrap: wrap;
+    gap: 30px;          /* more space between 2 buttons */
+    margin-top: 35px;  /* better spacing from text */
 }
 
 .btn {
-    padding: 14px 32px;
-    border-radius: 30px;
+    padding: 18px 44px;  /* bigger buttons */
+    border-radius: 40px;
     font-weight: bold;
+    font-size: 18px;
     text-decoration: none;
     color: white;
     transition: 0.3s;
+}
+.buttons .btn {
+    padding: 16px 38px;
+    font-size: 18px;
 }
 
 .orange { background: #ff7a00; }
@@ -223,6 +208,33 @@ body {
     transform: scale(1.1);
     box-shadow: 0 0 20px white;
 }
+.fest-title {
+    font-family: 'Samarkan', serif;   /* ✅ exact font */
+    font-size: 120px;                 /* ✅ BIG size */
+    letter-spacing: 6px;
+    margin: 20px 0;
+    white-space: nowrap;
+
+    color: #d00000;                   /* ✅ RED like image */
+    text-shadow: none;                /* ❌ no glow */
+}
+
+/* 2026 — Bank Gothic style */
+.fest-title span {
+    font-family: 'Orbitron', sans-serif; /* Bank Gothic look */
+    font-size: 84px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .fest-title span {
+        font-size: 42px;
+        letter-spacing: 2px;
+    }
+}
+
 
 /* ================= PROCESS SECTION ================= */
 .process-section {
@@ -236,13 +248,14 @@ body {
     margin-bottom: 50px;
 }
 
+/* ================= PROCESS SECTION – DESKTOP DEFAULT ================= */
+/* ================= PROCESS SECTION – DESKTOP ================= */
 .process-line {
     display: flex;
-    align-items: center;        /* ✅ vertical center */
+    align-items: center;
     justify-content: center;
     gap: 25px;
 }
-
 
 .process-box {
     background: #132a5c;
@@ -253,47 +266,36 @@ body {
     min-width: 190px;
 
     display: flex;
-    align-items: center;        /* ✅ text center */
+    align-items: center;
     justify-content: center;
-
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
-/* Yellow line BETWEEN boxes */
-/* CONNECTOR WITH ARROW */
+
 .connector {
-    position: relative;
     width: 90px;
     height: 4px;
-
     background: linear-gradient(
         90deg,
         rgba(255, 215, 0, 0.2),
         rgba(255, 215, 0, 0.6),
         rgba(255, 215, 0, 0.2)
     );
-
-    overflow: hidden;
+    position: relative;
     border-radius: 4px;
 }
 
-
-/* MOVING ARROW */
 .connector .arrow {
     position: absolute;
-    top: 0;
-    left: -30px;
     width: 30px;
     height: 4px;
-
     background: linear-gradient(
         90deg,
         transparent,
         #ffd700,
         transparent
     );
-
     animation: arrowMove 1.8s linear infinite;
 }
+
 
 /* ARROW ANIMATION */
 @keyframes arrowMove {
@@ -304,8 +306,41 @@ body {
         left: 100%;
     }
 }
+/* ================= ABOUT AAVISHKAAR ================= */
 
+.about-section {
+    padding: 80px 40px 40px;
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
+}
 
+.about-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-top: 20px;
+}
+/*@media (max-width: 768px) {
+    .about-text {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+}
+*/    
+/* Cultural button below About */
+.about-btn {
+    margin-top: 50px;
+    text-align: center;
+}
+/*
+@media (max-width: 768px) {
+    .about-btn .btn {
+        width: 80%;
+        text-align: center;
+    }
+}
+*/
 
 
 /* ================= GALLERY SECTION ================= */
@@ -431,13 +466,7 @@ body {
     color: #cccccc;
 }
 
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-}
+
 /* Color ONLY the heading words: Email: and Address: */
 /* Increase size ONLY for Email: and Address: */
 .footer-section p strong {
@@ -505,6 +534,8 @@ section, footer {
     opacity: 1;
 }
 /* ================= MOBILE NAV FIX ================= */
+
+    /* ================= MOBILE NAV FIX ================= */
 @media (max-width: 768px) {
 
     .navbar {
@@ -528,28 +559,395 @@ section, footer {
         font-size: 14px;
     }
 }
-@media (max-width: 768px) {
-    .college-main {
-        font-size: 28px;
-        padding: 0 10px;
-    }
-    .college-tag {
-        font-size: 15px;
-    }
-}
+
 /* ===== COLOR FIX ONLY FOR AAVISHKAAR 2026 ===== */
 
-.fest-title {
-    font-family: 'Samarkan', serif;
-    font-size: 96px;
-    letter-spacing: 6px;
-    margin: 20px 0;
-    white-space: nowrap;
-    color: #c00000;          /* 🔴 RED for aavishkaar */
+/* ===== BIGGER AAVISHKAAR 2026 ===== */
+
+
+/* ===== MINI NAV BAR BELOW AAVISHKAAR ===== */
+
+
+
+.mini-nav a:hover {
+    color: #000;
+    transform: scale(1.05);
+}
+   .mini-nav {
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 16px;
+    }
+
+    .mini-nav a {
+        font-size: 15px;
+    }
+
+
+/* FULL WIDTH BAR BELOW AAVISHKAAR */
+.hero-nav {
+    position: sticky;
+    top: 70px;                 /* navbar height */
+    z-index: 9;
+
+    width: 100%;
+    background: #facc15;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    padding: 14px 0;
+    margin: 28px 0 22px;       /* BETWEEN tagline & date */
 }
 
-/* 2026 white */
-.fest-title span {
-    color: #ffffff;         /* ⚪ WHITE */
-    margin-left: 14px;
+
+
+
+
+.hero {
+    padding-top: 180px;   /* navbar (70) + bar (70) */
+}
+
+
+.hero-nav a {
+    text-decoration: none;
+    color: #1e1b4b;
+}
+
+.hero-nav a:hover {
+    color: #000;
+}
+
+/* ===== CULTURAL CARDS ABOVE BUTTONS  Images===== */
+
+/* ===== CULTURAL CARDS GRID ===== */
+
+.cultural-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* desktop: 4 in a row */
+    gap: 40px;
+    margin: 60px auto 50px;
+    max-width: 1300px;
+}
+
+.culture-card {
+    background: #1e2a5a;
+    border-radius: 16px;
+    padding: 18px;
+    /* width removed for mobile flow */
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.culture-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.culture-card h3 {
+    margin-top: 18px;
+    font-size: 22px;
+    color: #ffd700;
+    letter-spacing: 1px;
+}
+/* =====================================================
+   FINAL MOBILE VIEW (CLEAN — LIKE aavishkaar.co.in)
+   ===================================================== */
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    height: 56px;
+    padding: 0 12px;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+
+  /* HERO */
+  .hero {
+    padding-top: 120px;
+    min-height: auto;
+    display: block;
+  }
+
+  .college-main {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .college-sub {
+    font-size: 14px;
+  }
+
+  .college-tag {
+    font-size: 13px;
+  }
+
+  .fest-title {
+        font-family: 'Samarkan', serif;
+        font-size: 64px;          /* BIG on mobile */
+        letter-spacing: 3px;
+        white-space: nowrap;
+        color: #d00000;
+    }
+
+    .fest-title span {
+        font-size: 42px;
+        color: #ffffff;
+        margin-left: 10px;
+    }
+}
+
+  .tagline {
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+
+  /* CULTURAL CARDS — ONE BY ONE */
+  .cultural-cards {
+    display: block;
+    padding: 0 16px;
+    margin: 20px 0;
+  }
+
+  .culture-card {
+    width: 100%;
+    margin-bottom: 22px;
+  }
+
+  .culture-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  /* BUTTONS */
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0 16px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+
+  /* ABOUT */
+  .about-section {
+    padding: 40px 16px;
+  }
+
+  .about-text {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* GALLERY */
+  
+
+  .gallery-grid img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 40px 16px;
+  }
+/* ================= DESKTOP RESTORE (DO NOT TOUCH MOBILE) ================= */
+@media (min-width: 769px) {
+
+    .hero {
+        min-height: auto;
+        display: block;             /* ✅ STICKY WILL WORK */
+        padding-top: 180px;         /* navbar + spacing */
+    }
+}
+
+
+    .cultural-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        max-width: 1300px;
+        margin: 60px auto 50px;
+    }
+
+    .culture-card {
+        width: auto;
+        margin: 0;
+    }
+
+    .buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .btn {
+        width: auto;
+    }
+}
+
+/* ================= MOBILE GALLERY FIX ================= */
+@media (max-width: 768px) {
+
+    .gallery-grid {
+        display: block;          /* one by one */
+        margin-top: 30px;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        margin-bottom: 20px;    /* spacing between images */
+        transform: none;        /* no jump issues */
+        opacity: 1;             /* always visible */
+    }
+}
+/* =====================================================
+   MOBILE GALLERY — EXACT LIKE aavishkaar.co.in
+   ===================================================== */
+@media (max-width: 768px) {
+
+    /* Force single column */
+    .gallery-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin-top: 24px !important;
+    }
+
+    /* Make images full-width & visible */
+    .gallery-grid img {
+        width: 100% !important;
+        height: auto !important;
+        opacity: 1 !important;
+        transform: none !important;
+        border-radius: 14px;
+    }
+}
+/* =====================================================
+   MOBILE GALLERY — ONE BY ONE (aavishkaar.co.in STYLE)
+   ===================================================== */
+@media (max-width: 768px) {
+
+    .gallery-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin-top: 24px !important;
+    }
+
+    .gallery-grid img {
+        width: 100% !important;
+        height: auto !important;
+        opacity: 1 !important;
+        transform: none !important;
+        border-radius: 14px;
+    }
+}
+/* ================= PROCESS SECTION – MOBILE ONLY ================= */
+@media (max-width: 768px) {
+
+    .process-line {
+        display: block;
+    }
+
+    .process-box {
+        width: 100%;
+        margin-bottom: 18px;
+        text-align: center;
+    }
+
+    .connector {
+        display: none;
+    }
+}
+/* ================= PROCESS SECTION – MOBILE ONLY ================= */
+@media (max-width: 768px) {
+
+    .process-line {
+        display: block;
+    }
+
+    .process-box {
+        width: 100%;
+        margin-bottom: 18px;
+        text-align: center;
+    }
+
+    .connector {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .process-line {
+        display: block;
+    }
+    .process-box {
+        width: 100%;
+        margin-bottom: 18px;
+    }
+    .connector {
+        display: none;
+    }
+}
+/* ===== EVENT DATE BELOW AAVISHKAAR ===== */
+/* ===== EVENT DATE (BIGGER) ===== */
+.event-date {
+    text-align: center;
+    font-size: 34px;        /* 🔥 increased */
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    margin-top: 16px;
+    color: #ffd700;
+}
+
+/* ===== TAGLINE (MORE BIG & CLEAR) ===== */
+.tagline {
+    text-align: center;
+    font-size: 34px;        /* 🔥 increased */
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    margin-top: 20px;
+    margin-bottom: 45px;
+    color: #ffffff;
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+    .event-date {
+        font-size: 22px;
+    }
+
+    .tagline {
+        font-size: 20px;
+    }
+}
+/* ===== HERO MENU BAR ===== */
+
+.hero-menu a:hover {
+    color: #000;
+    transform: scale(1.05);
+}
+@media (max-width: 768px) {
+    .hero-menu {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .hero-menu a {
+        font-size: 15px;
+    }
 }
