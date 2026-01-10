@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AAVISHKAAR 2026 | Vel Tech High Tech</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-brand">
+        <img src="images/logo.png" alt="AAVISHKAAR Logo">
+        <span>AAVISHKAAR 2026</span>
+    </div>
+
+    <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
+
+
+</nav>
+
+
+<section class="hero" id="home">
+
+    <div class="hero-box">
+        <h2 class="college-name">VEL TECH HIGH TECH</h2>
+        <h1 class="fest-title">AAVISHKAAR <span>2026</span></h1>
+
+        <p class="tagline">Unleash the Innovation • Celebrate the Talent</p>
+
+
+        <div class="buttons">
+            <a class="btn orange">Events</a>
+            <a class="btn blue">Games</a>
+            <a class="btn pink">Registration</a>
+            <a class="btn purple">Contact Us</a>
+        </div>
+    </div>
+</section>
+<section class="process-section">
+    <h2 class="section-title">YOUR PROCESS</h2>
+
+    <div class="process-line">
+        <div class="process-box">Participate</div>
+          <span class="connector">
+             <span class="arrow"></span>
+          </span>
+
+
+        <div class="process-box">Register</div>
+       <span class="connector">
+          <span class="arrow"></span>
+         </span>
+
+        <div class="process-box">Get Selected</div>
+            <span class="connector">
+               <span class="arrow"></span>
+           </span>
+
+        <div class="process-box">Win Amazing Prizes</div>
+    </div>
+</section>
+<section class="gallery-section" id="gallery">
+    <h2 class="section-title">GALLERY</h2>
+
+    <div class="gallery-grid">
+        <img src="images/gallery1.png" alt="Gallery Image">
+        <img src="images/gallery2.png" alt="Gallery Image">
+        <img src="images/gallery3.png" alt="Gallery Image">
+        <img src="images/gallery4.JPEG" alt="Gallery Image">
+        <img src="images/gallery5.png" alt="Gallery Image">
+        <img src="images/gallery6.JPEG" alt="Gallery Image"> 
+        <img src="images/gallery7.JPEG" alt="Gallery Image"> 
+        <img src="images/gallery8.JPEG" alt="Gallery Image"> 
+        <img src="images/gallery9.JPEG" alt="Gallery Image"> 
+        <img src="images/gallery10.JPEG" alt="Gallery Image"> 
+        <img src="images/gallery11.JPEG" alt="Gallery Image"> 
+        <img src="images/gallery12.JPEG" alt="Gallery Image"> 
+    </div>
+</section>
+<footer class="footer" id="about">
+    <div class="footer-content">
+
+        <div class="footer-section">
+            <h3>ABOUT US</h3>
+            <p>
+                AAVISHKAAR is the annual technical & cultural fest of
+                <strong>Vel Tech High Tech Engineering College</strong>,
+                celebrating innovation, creativity, and student talent.
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h3 id="contact">CONTACT</h3>
+
+            <p>
+                <strong>Email:</strong>
+                <a href="mailto:aavishkaar@velhightech.com">
+                    aavishkaar@velhightech.com
+                </a>
+            </p>
+
+            <p>
+                <strong>Address:</strong><br>
+                60, Avadi–Vel Tech Road,<br>
+                Vel Nagar, Avadi,<br>
+                Chennai, Tamil Nadu – 600062
+            </p>
+
+            <a class="map-link"
+               href="https://www.google.com/maps?q=Vel+Tech+High+Tech+Engineering+College"
+               target="_blank">
+                View on Google Maps
+            </a>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+    const images = document.querySelectorAll('.gallery-grid img');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    images.forEach(img => observer.observe(img));
+</script>
+<script>
+    const gallery = document.querySelector('.gallery-grid');
+    const images = document.querySelectorAll('.gallery-grid img');
+
+    const galleryObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                gallery.classList.add('gallery-visible');
+
+                images.forEach(img => {
+                    img.style.opacity = "1";
+                    img.style.transform = "translateY(0)";
+                });
+
+                galleryObserver.disconnect();
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    galleryObserver.observe(gallery);
+</script>
+
+</body>
+</html>

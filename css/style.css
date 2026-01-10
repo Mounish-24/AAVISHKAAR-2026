@@ -1,0 +1,532 @@
+@font-face {
+    font-family: 'Samarkan';
+    src: url('../fonts/Samarkan.ttf') format('truetype');
+}
+
+/* ================= BASIC RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ================= GLOBAL BACKGROUND ================= */
+body {
+    min-height: 100vh;
+    color: white;
+
+    background:
+        radial-gradient(circle at top, rgba(120, 80, 255, 0.35), transparent 60%),
+        radial-gradient(circle at bottom, rgba(0, 200, 255, 0.25), transparent 60%),
+        linear-gradient(135deg, #05010f, #12002b, #05010f);
+
+    background-attachment: fixed;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 40px;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+}
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: auto;   /* 🔥 THIS pushes menu to the right */
+}
+
+
+/* Center logo + text */
+.nav-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-brand img {
+    width: 52px;
+}
+
+.nav-brand span {
+    font-family: 'Samarkan', serif;
+    font-size: 28px;
+    color: #ffd700;
+    letter-spacing: 2px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+
+    margin-left: auto;
+}
+
+.navbar ul li a {
+    font-size:18px;
+    letter-spacing:1px;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar ul li a:hover {
+    color: #ffd700;
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.hero-box {
+    text-align: center;
+    padding: 40px 55px;
+    max-width: 750px;
+    border-radius: 24px;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    box-shadow:
+        0 0 25px rgba(255, 0, 200, 0.25),
+        0 0 60px rgba(0, 200, 255, 0.25);
+}
+
+.college-name {
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: #ffd966;
+    margin-bottom: 10px;
+}
+.fest-title {
+    position: relative;
+    font-family: 'Samarkan', serif;
+    font-size: 80px;
+    letter-spacing: 4px;
+    margin: 15px 0;
+
+    background: linear-gradient(
+        120deg,
+        #008a7a 0%,
+        #00ff73 20%,
+        #fff6c0 35%,
+        #00ffff 50%,
+        #b89200 65%,
+        #d0ff00 80%,
+        #8a0050 100%
+    );
+    background-size: 250% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: luxuryShine 4s ease-in-out infinite;
+
+    text-shadow:
+        0 0 8px rgba(255, 215, 0, 0.6),
+        0 0 18px rgba(255, 200, 0, 0.5),
+        0 0 35px rgba(255, 180, 0, 0.4);
+}
+
+
+.fest-title span {
+    margin-left: 14px;
+
+    background: linear-gradient(
+        120deg,
+        #ffcc00,
+        #fff2b2,
+        #ffcc00
+    );
+    background-size: 200%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 12px rgba(255, 204, 0, 0.9),
+        0 0 30px rgba(255, 170, 0, 0.7);
+}
+
+.tagline {
+    position: relative;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    margin: 25px 0 35px;
+
+    background: linear-gradient(
+        90deg,
+        #cfedff,
+        #ffffff,
+        #ffd700,
+        #ffffff,
+        #ffcffa
+    );
+    background-size: 300% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: taglineShine 5s ease-in-out infinite;
+
+    text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.4),
+        0 0 14px rgba(255, 215, 0, 0.3);
+}
+
+/* ================= BUTTONS ================= */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.orange { background: #ff7a00; }
+.blue   { background: #007bff; }
+.pink   { background: #e83e8c; }
+.purple { background: #6f42c1; }
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px white;
+}
+
+/* ================= PROCESS SECTION ================= */
+.process-section {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    color: #ffd700;
+    margin-bottom: 50px;
+}
+
+.process-line {
+    display: flex;
+    align-items: center;        /* ✅ vertical center */
+    justify-content: center;
+    gap: 25px;
+}
+
+
+.process-box {
+    background: #132a5c;
+    padding: 22px 34px;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    min-width: 190px;
+
+    display: flex;
+    align-items: center;        /* ✅ text center */
+    justify-content: center;
+
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+/* Yellow line BETWEEN boxes */
+/* CONNECTOR WITH ARROW */
+.connector {
+    position: relative;
+    width: 90px;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        rgba(255, 215, 0, 0.2),
+        rgba(255, 215, 0, 0.6),
+        rgba(255, 215, 0, 0.2)
+    );
+
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+
+/* MOVING ARROW */
+.connector .arrow {
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 30px;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffd700,
+        transparent
+    );
+
+    animation: arrowMove 1.8s linear infinite;
+}
+
+/* ARROW ANIMATION */
+@keyframes arrowMove {
+    from {
+        left: -30px;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+
+
+
+/* ================= GALLERY SECTION ================= */
+.gallery-section {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 15px;
+
+    opacity: 0;
+    transform: translateY(30px);
+
+    transition: 
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        opacity 0.6s ease;
+
+    position: relative;     /* ⬅ required */
+    z-index: 1;             /* ⬅ base level */
+}
+
+
+/* Hover / touch effect */
+.gallery-grid img:hover {
+    transform: translateY(-15px) scale(1.08); /* ⬅ moves UP */
+    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.8);
+    z-index: 10;   /* ⬅ comes ABOVE other images */
+}
+
+
+@keyframes luxuryShine {
+    0% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 120% center;
+    }
+    100% {
+        background-position: 250% center;
+    }
+}
+@keyframes taglineShine {
+    0% {
+        background-position: 0% center;
+        opacity: 0.7;
+    }
+    50% {
+        background-position: 150% center;
+        opacity: 1;
+    }
+    100% {
+        background-position: 300% center;
+        opacity: 0.7;
+    }
+}
+/* ================= FOOTER ================= */
+.footer {
+    background: linear-gradient(135deg, #0b0830, #14104a);
+    padding: 70px 40px 30px;
+    color: white;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;   /* ⬅ stack items */
+    align-items: center;      /* ⬅ center horizontally */
+    text-align: center;       /* ⬅ center text */
+    gap: 50px;
+}
+.footer-section {
+    max-width: 700px;
+}
+
+
+.footer-section h3 {
+    font-size: 26px;
+    color: #ffd700;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.footer-section p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+.footer-section a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Bottom line */
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    text-align: center;
+    font-size: 14px;
+    color: #cccccc;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+/* Color ONLY the heading words: Email: and Address: */
+/* Increase size ONLY for Email: and Address: */
+.footer-section p strong {
+    color: #ffd700;      /* gold */
+    font-size: 20px;     /* ⬅ increased size */
+    font-weight: 700;
+}
+.footer-section p strong {
+    color: #ffdd57;      /* lighter gold */
+    font-size: 20px;     /* ⬅ increased size */
+    font-weight: 700;
+}
+/* Google Maps button animation */
+.map-link {
+    display: inline-block;
+    padding: 12px 26px;
+    margin-top: 18px;
+
+    border-radius: 30px;
+    border: 2px solid #ffd700;
+
+    color: #ffd700;
+    font-weight: 600;
+    text-decoration: none;
+
+    background: transparent;
+
+    animation: mapPulse 2s infinite;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.map-link:hover {
+    background: #ffd700;
+    color: #0b0830;
+    box-shadow: 0 0 18px rgba(255, 215, 0, 0.9);
+    transform: scale(1.08);
+}
+
+/* Pulse animation */
+@keyframes mapPulse {
+    0% {
+        box-shadow: 0 0 0 rgba(255, 215, 0, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 18px rgba(255, 215, 0, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(255, 215, 0, 0.4);
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+section, footer {
+    scroll-margin-top: 80px; /* navbar height */
+}
+/* When gallery is hovered, ALL images move up */
+.gallery-grid:hover img {
+    transform: translateY(-12px);
+}
+/* Gallery group lift on scroll (ADDITIONAL) */
+.gallery-grid.gallery-visible img {
+    transform: translateY(0);
+    opacity: 1;
+}
+/* ================= MOBILE NAV FIX ================= */
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .nav-brand img {
+        width: 34px;
+    }
+
+    .nav-brand span {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .navbar ul {
+        gap: 12px;
+    }
+
+    .navbar ul li a {
+        font-size: 14px;
+    }
+}
