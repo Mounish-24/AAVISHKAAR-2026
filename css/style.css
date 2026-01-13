@@ -556,18 +556,23 @@ body {
     color: white;
 }
 
+/* === FOOTER CONTENT FULL WIDTH FIX === */
 .footer-content {
-    max-width: 900px;
-    margin: auto;
+    width: 100%;
+    max-width: none;        /* 🔥 REMOVE LIMIT */
+    margin: 0;              /* 🔥 REMOVE CENTERING */
 
     display: flex;
-    flex-direction: column;   /* ⬅ stack items */
-    align-items: center;      /* ⬅ center horizontally */
-    text-align: center;       /* ⬅ center text */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 50px;
 }
+
+/* REMOVE INNER DARK BOX — FULL WIDTH FOOTER */
 .footer-section {
-    max-width: 700px;
+    max-width: none;
+    width: 100%;
 }
 
 
@@ -1331,6 +1336,7 @@ section, footer {
 .event-register {
     margin-top: 30px;
     text-align: center;
+    margin-bottom: 70px;
 }
 .event-page {
     max-width: 1100px;
@@ -1802,13 +1808,29 @@ section, footer {
 }
 /* ================= SOLO DANCE PAGE FOOTER ONLY ================= */
 
+/* ================= SOLO PAGE FOOTER — FINAL ================= */
+/* Full-width dark box footer */
+
 .solo-footer {
-    background: #1a1d4d;
+    width: 100vw;                 /* 🔥 FULL WIDTH */
+    margin-left: calc(-50vw + 50%); /* 🔥 BREAK OUT OF CENTER */
+    
+    background: #1a1d4d;          /* DARK BOX COLOR */
     color: white;
+
+    padding: 60px 20px;
     text-align: center;
-    padding: 40px 20px;
-    margin-top: 80px;
+
+    border-radius: 0;             /* ❌ no rounded box */
+    box-shadow: none;             /* ❌ no card shadow */
 }
+
+.solo-footer > * {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .solo-footer-menu {
     margin-bottom: 20px;
@@ -2259,4 +2281,89 @@ section, footer {
 .solo-page .simple-header .fest-title {
     font-size: 22px;
     line-height: 1;
+}
+/* ================= SOLO DANCE PAGE — FULL BLUE BACKGROUND ================= */
+/* Home page NOT affected */
+
+.solo-page {
+    background: #1a1d4d !important;   /* same deep blue as header */
+}
+
+/* Remove any gradient / glow layers */
+.solo-page body {
+    background: #1a1d4d !important;
+}
+
+/* Ensure sections don’t reintroduce gradients */
+.solo-page section,
+.solo-page .hero,
+.solo-page .event-detail {
+    background: transparent !important;
+}
+/* ================= SOLO PAGE BACKGROUND FIX ================= */
+/* Home page NOT affected */
+
+.solo-page {
+    background: #1a265a !important;   /* same clean blue */
+}
+
+.solo-page body {
+    background: #1a265a !important;
+}
+/* ================= SOLO PAGE FOOTER FULL WIDTH FIX ================= */
+/* Home page NOT affected */
+
+.solo-page .footer-content {
+    max-width: 100% !important;   /* 🔥 full width */
+    margin: 0 !important;
+    padding: 60px 40px;
+    background: #1a1d4d;          /* same dark color */
+}
+/* FORCE FOOTER TO LOOK LIKE IMAGE-2 */
+.footer-content,
+.footer-section {
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+/* ================= FOOTER BOTTOM FLUSH FIX ================= */
+
+/* Remove any extra space below footer */
+body.solo-page {
+    margin: 0;
+    padding: 0;
+}
+
+/* Make footer stick to bottom cleanly */
+.solo-footer {
+    margin-bottom: 0 !important;
+    padding-bottom: 60px;
+}
+
+/* Prevent background from showing below footer */
+html, body {
+    background: #1a1d4d;
+}
+/* Remove extra space before footer */
+.solo-page section:last-of-type {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+/* ===== SOLO FOOTER FINAL ALIGNMENT FIX ===== */
+
+/* Keep menu at top center */
+.solo-footer-menu {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 35px;   /* ⬅ space BELOW menu */
+}
+
+/* Push contact & address DOWN */
+.solo-footer p {
+    display: block;
+    text-align: center;
+    margin: 14px auto;     /* ⬅ vertical spacing */
+    max-width: 900px;
+    line-height: 1.6;
 }
