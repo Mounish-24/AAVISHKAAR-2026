@@ -30,20 +30,33 @@ body {
     top: 0;
     width: 100%;
     height: 70px;
-    z-index: 10;
+    z-index: 500;
 
     display: flex;
     align-items: center;
 
     padding: 0 45px;
     background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(6px);
+    
 }
 .nav-brand {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-right: auto;   /* 🔥 THIS pushes menu to the right */
+}
+/* ===== CENTER SLOT IN NAVBAR ===== */
+.nav-center-slot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    pointer-events: none;
 }
 
 
@@ -76,14 +89,14 @@ body {
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 40px;
+    gap: 18px;
 
     margin-left: auto;
 }
 
 .navbar ul li a {
-    font-size:18px;
-    letter-spacing:1px;
+    font-size:15px;
+    letter-spacing:0.5px;
     text-decoration: none;
     color: white;
 }
@@ -95,8 +108,11 @@ body {
 /* ================= HERO SECTION ================= */
 .hero {
     min-height: auto;
-    display: block;          /* ✅ key fix */
+    display: block;
     padding-top: 180px;
+
+    position: relative;   /* 🔥 ADD */
+    z-index: 2;           /* 🔥 ADD */
 }
 
 .hero-box {
@@ -104,6 +120,9 @@ body {
     padding: 0;
     background: none;
     box-shadow: none;
+
+    position: relative;   /* 🔥 ADD */
+    z-index: 3;           /* 🔥 ADD (ABOVE VIDEO) */
 }
 
 /* ================= COLLEGE NAME STYLE ================= */
@@ -111,7 +130,14 @@ body {
 .college-block {
     text-align: center;
     margin-top: 40px;     /* pushes text DOWN */
+    margin-bottom: 80px;
+    margin-bottom: 100px;
+
+}
+@media (max-width: 768px) {
+  .college-block {
     margin-bottom: 40px;
+  }
 }
 
 /* Vel Tech High Tech */
@@ -126,21 +152,23 @@ body {
     margin-bottom: 12px;
 }
 
+/* ===== SIZE MATCHED TO OFFICIAL IMAGE ===== */
+
 .college-sub {
-    font-family: "Times New Roman", serif;
-    font-size: 34px;     /* 🔥 MORE BIG */
-    letter-spacing: 1.2px;
-    color: #cfd91a;
-    margin-bottom: 10px;
+  font-family: "Times New Roman", serif;
+  font-size: 36px;        /* ⬅ increased to match image */
+  font-weight: 500;
+  color: #1f3a8a;         /* same royal blue */
+  margin-bottom: 8px;
 }
 
 .college-tag {
-    font-family: "Times New Roman", serif;
-    font-size: 28px;     /* 🔥 MORE BIG */
-    font-weight: 700;
-    letter-spacing: 1.1px;
-    color: #d97706;
+  font-family: "Times New Roman", serif;
+  font-size: 32px;        /* ⬅ increased to match image */
+  font-weight: 600;
+  color: #f97316;         /* same orange */
 }
+
 
 .tagline {
     position: relative;
@@ -209,23 +237,119 @@ body {
     box-shadow: 0 0 20px white;
 }
 .fest-title {
-    font-family: 'Samarkan', serif;   /* ✅ exact font */
-    font-size: 120px;                 /* ✅ BIG size */
+    font-family: 'Samarkan', serif;
+    font-size: 200px;
     letter-spacing: 6px;
-    margin: 20px 0;
+    margin: 10px 0;
     white-space: nowrap;
+    margin-bottom: 35px;
 
-    color: #d00000;                   /* ✅ RED like image */
-    text-shadow: none;                /* ❌ no glow */
+    background: linear-gradient(
+        90deg,
+        #ff0080,
+        #ffd700,
+        #00f2ff,
+        #ff0080
+    );
+    background-size: 300% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: discoGlow 6s linear infinite;
+
+    text-shadow:
+        0 0 10px rgba(255, 215, 0, 0.5),
+        0 0 28px rgba(255, 0, 128, 0.4);
 }
 
+
 /* 2026 — Bank Gothic style */
+/* 2026 — Samarkan (MATCHES aavishkaar) */
 .fest-title span {
-    font-family: 'Orbitron', sans-serif; /* Bank Gothic look */
-    font-size: 84px;
-    font-weight: 700;
+    font-family: 'Samarkan', serif;   /* ✅ FIXED */
+    font-size: 84px;                  /* slightly smaller than aavishkaar */
+    font-weight: normal;
     letter-spacing: 3px;
-    color: #ffffff;
+
+    background: linear-gradient(
+        90deg,
+        #ffd700,
+        #ff0080,
+        #ffd700
+    );
+    background-size: 300% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: discoGlow 6s linear infinite;
+}
+
+/* ===== AAVISHKAAR HERO LOGO ===== */
+/* ===== AAVISHKAAR + LOGO INLINE ===== */
+.fest-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;                 /* space between logo & text */
+    text-align: center;
+}
+
+/* FEST HERO DEFAULT */
+#festHero {
+    transition: 
+        transform 0.6s ease,
+        opacity 0.4s ease;
+}
+
+/* ===== FEST INSIDE NAVBAR CENTER ===== */
+/* ===== FEST TITLE INSIDE NAVBAR (CENTER) ===== */
+#festHero.in-nav {
+    position: fixed;
+    top: 0;                /* BELOW navbar */
+    left: 50%;
+     height: 70px;
+    transform: translateX(-50%) scale(0.9);
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;            /* 🔥 ABOVE yellow bar */
+    pointer-events: none;
+}
+
+
+
+
+.fest-logo {
+    width: 90px;          /* ✅ matches 120px Samarkan text */
+    height: auto;
+    margin-bottom: 6px;
+}
+/* Smaller logo ONLY inside navbar */
+#festHero.in-nav .fest-logo {
+    width: 40px;
+    height: auto;
+}
+
+/* ===== SCROLL ANIMATION TARGET ===== */
+#festHero {
+    position: relative;
+    transition: 
+        transform 0.6s ease,
+        scale 0.6s ease;
+}
+
+.home-page .hero {
+    padding-top: 180px;
+}
+
+@keyframes discoGlow {
+    0% { background-position: 0% center; }
+    100% { background-position: 300% center; }
 }
 
 @media (max-width: 768px) {
@@ -235,6 +359,11 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+    .fest-title {
+        margin-bottom: 20px;
+    }
+}
 
 /* ================= PROCESS SECTION ================= */
 .process-section {
@@ -306,6 +435,21 @@ body {
         left: 100%;
     }
 }
+@media (max-width: 768px) {
+
+  .college-main {
+    font-size: 28px;
+  }
+
+  .college-sub {
+    font-size: 18px;   /* increased */
+  }
+
+  .college-tag {
+    font-size: 16px;   /* increased */
+  }
+}
+
 /* ================= ABOUT AAVISHKAAR ================= */
 
 .about-section {
@@ -341,7 +485,6 @@ body {
     }
 }
 */
-
 
 /* ================= GALLERY SECTION ================= */
 .gallery-section {
@@ -560,10 +703,6 @@ section, footer {
     }
 }
 
-/* ===== COLOR FIX ONLY FOR AAVISHKAAR 2026 ===== */
-
-/* ===== BIGGER AAVISHKAAR 2026 ===== */
-
 
 /* ===== MINI NAV BAR BELOW AAVISHKAAR ===== */
 
@@ -585,10 +724,12 @@ section, footer {
 
 
 /* FULL WIDTH BAR BELOW AAVISHKAAR */
+/* ===== YELLOW BAR STICKY BELOW NAVBAR ===== */
 .hero-nav {
     position: sticky;
-    top: 70px;                 /* navbar height */
-    z-index: 9;
+    top: 70px;                 /* 🔥 navbar height */
+
+    z-index: 90;
 
     width: 100%;
     background: #facc15;
@@ -598,16 +739,9 @@ section, footer {
     align-items: center;
 
     padding: 14px 0;
-    margin: 28px 0 22px;       /* BETWEEN tagline & date */
+    margin: 0;                 /* 🔥 remove gap */
 }
 
-
-
-
-
-.hero {
-    padding-top: 180px;   /* navbar (70) + bar (70) */
-}
 
 
 .hero-nav a {
@@ -692,16 +826,29 @@ section, footer {
     font-size: 13px;
   }
 
-  .fest-title {
-        font-family: 'Samarkan', serif;
-        font-size: 64px;          /* BIG on mobile */
-        letter-spacing: 3px;
-        white-space: nowrap;
-        color: #d00000;
-    }
+ .fest-title {
+    font-family: 'Samarkan', serif;
+    font-size: 64px;
+    letter-spacing: 3px;
+    white-space: nowrap;
+
+    background: linear-gradient(
+        90deg,
+        #ff0080,
+        #ffd700,
+        #00f2ff,
+        #ff0080
+    );
+    background-size: 300% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: discoGlow 6s linear infinite;
+}
 
     .fest-title span {
-        font-size: 42px;
+        font-size: 30px;
         color: #ffffff;
         margin-left: 10px;
     }
@@ -798,7 +945,7 @@ section, footer {
     .btn {
         width: auto;
     }
-}
+
 
 /* ================= MOBILE GALLERY FIX ================= */
 @media (max-width: 768px) {
@@ -950,4 +1097,1093 @@ section, footer {
     .hero-menu a {
         font-size: 15px;
     }
+}
+@media (max-width: 768px) {
+    .fest-hero {
+        gap: 14px;
+    }
+
+    .fest-logo {
+        width: 60px;
+    }
+}
+/* ===== COLLEGE NAME IN NAVBAR (LEFT) ===== */
+.nav-college {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-right: auto;   /* 🔥 pushes menu to right */
+    line-height: 1.2;
+}
+
+.nav-college-main {
+    font-family: "Times New Roman", serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ced716;
+}
+
+.nav-college-sub {
+    font-family: "Times New Roman", serif;
+    font-size: 13px;
+    color: #cfd91a;
+}
+
+.nav-college-tag {
+    font-family: "Times New Roman", serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #d97706;
+}
+@media (max-width: 768px) {
+    .nav-college-main {
+        font-size: 14px;
+    }
+
+    .nav-college-sub {
+        font-size: 11px;
+    }
+
+    .nav-college-tag {
+        font-size: 10px;
+    }
+}
+/* Smaller text inside navbar */
+#festHero.in-nav .fest-title {
+    font-size: 30px;
+     line-height: 1;
+}
+
+#festHero.in-nav .fest-title span {
+    font-size: 30px;
+}
+/* ===== BACKGROUND VIDEO (SAFE) ===== */
+.video-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    z-index: -1;          /* 🔥 PUSH VIDEO BEHIND EVERYTHING */
+    pointer-events: none;
+}
+
+.video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.35);
+}
+
+/* ===== WATCH VIDEO ROUND BUTTON ===== */
+.watch-btn {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+    font-size: 26px;
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #ff0080,
+        #ffd700,
+        #00f2ff
+    );
+    background-size: 300% 300%;
+
+    box-shadow:
+        0 0 18px rgba(255,215,0,0.7),
+        0 0 35px rgba(0,242,255,0.6);
+
+    animation: watchGlow 6s linear infinite;
+}
+
+@keyframes watchGlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+}
+
+.watch-btn:hover {
+    transform: scale(1.12);
+}
+
+/* ===== VIDEO MODAL ===== */
+.promo-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.promo-modal video {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 16px;
+}
+
+.promo-close {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/* ================= EVENTS PAGE ================= */
+
+.events-page {
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.events-title {
+    font-size: 42px;
+    color: #ffd700;
+    margin-bottom: 40px;
+    text-decoration: underline;
+}
+
+.events-category {
+    font-size: 32px;
+    color: #ffd700;
+    margin-bottom: 30px;
+}
+
+/* Make whole card clickable */
+.event-card-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Event Card */
+.event-card {
+    background: #1e2a5a;
+    padding: 25px;
+    border-radius: 18px;
+    width: 340px;
+    margin: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card img {
+    width: 100%;
+    border-radius: 14px;
+}
+
+.event-name {
+    margin-top: 18px;
+    font-size: 22px;
+    color: #ffd700;
+    font-weight: 600;
+}
+
+/* Hover effect */
+.event-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
+}
+
+/* ================= EVENT DETAILS PAGE ================= */
+
+.event-detail {
+    padding: 120px 20px 120px;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.event-title {
+    font-size: 40px;
+    color: #ffd700;
+    margin-bottom: 30px;
+}
+
+.event-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 18px;
+    margin-bottom: 30px;
+}
+
+.event-description {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+/* Event register button spacing */
+.event-register {
+    margin-top: 30px;
+    text-align: center;
+}
+.event-page {
+    max-width: 1100px;
+    margin: auto;
+    padding-top: 120px;
+}
+.event-page > * {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.event-page > *:nth-child(2) { animation-delay: 0.1s; }
+.event-page > *:nth-child(3) { animation-delay: 0.2s; }
+.event-page > *:nth-child(4) { animation-delay: 0.3s; }
+.event-page > *:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.info-box {
+    background: #1e2a5a;
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(255,215,0,0.6);
+}
+/* ================= EVENT LIST FIX (NO DOTS + CENTER ALIGN) ================= */
+
+.event-list {
+    list-style: none;      /* ❌ remove bullets */
+    padding-left: 0;       /* ❌ remove left gap */
+    margin-top: 20px;
+}
+
+.event-list li {
+    text-align: center;    /* ✅ proper alignment */
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 14px;
+    color: white;
+}
+@media (max-width: 768px) {
+    .event-list li {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .event-page {
+        padding: 90px 16px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.event-ref-page {
+    max-width: 1150px;
+    margin: auto;
+    padding: 120px 20px;
+}
+.event-box {
+    background: #111c44;
+    padding: 32px;
+    border-radius: 14px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+.event-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.event-info-box {
+    background: #1a265a;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.4);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.event-info-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(255,215,0,0.5);
+}
+@media (max-width: 768px) {
+    .event-ref-page {
+        padding: 90px 16px;
+    }
+
+    .event-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ================= EVENT PRIZE & PAYMENT SECTION ================= */
+
+.event-finance {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.prize-box {
+    background: #13245a;
+    display: inline-block;
+    padding: 35px 60px;
+    border-radius: 14px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.45);
+    margin-bottom: 40px;
+}
+
+.prize-title {
+    color: #ffd700;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.prize-box p {
+    font-size: 20px;
+    margin: 10px 0;
+    color: white;
+}
+
+.prize-box strong {
+    color: #ffd700;
+}
+
+.fee-deadline {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 30px auto;
+    font-size: 18px;
+}
+
+.fee-text,
+.deadline-text {
+    color: white;
+}
+
+.fee-text strong,
+.deadline-text strong {
+    color: #ffd700;
+}
+
+.onspot-text {
+    margin: 35px 0;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.payment-details {
+    margin-top: 50px;
+}
+
+.payment-details h3 {
+    color: #ffd700;
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.payment-details p {
+    font-size: 18px;
+    color: white;
+}
+
+.payment-link {
+    color: #ffd700;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .fee-deadline {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .prize-box {
+        padding: 28px 30px;
+    }
+}
+/* ================= RULES & GUIDELINES STYLE ================= */
+
+.rules-box p {
+    background: #13245a;
+    padding: 14px 20px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+
+    font-size: 18px;
+    color: white;
+    line-height: 1.6;
+
+    text-align: left;          /* ✅ LEFT ALIGN TEXT */
+}
+.rules-box p span {
+    color: #ffd700;
+    font-weight: 600;
+    display: inline-block;     /* keeps number + title together */
+    margin-right: 6px;
+}
+
+.rules-box p span {
+    color: #ffd700;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .rules-box p {
+        font-size: 16px;
+        padding: 12px 16px;
+    }
+}
+@media (max-width: 768px) {
+    .rules-box p {
+        font-size: 16px;
+        padding: 12px 16px;
+    }
+}
+/* ================= STUDENT COORDINATORS ================= */
+
+.coordinator-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.coordinator-card {
+    background: #1a265a;
+    padding: 28px 20px;
+    border-radius: 14px;
+    text-align: center;
+
+    box-shadow: 0 0 20px rgba(0,0,0,0.45); /* DEFAULT */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.coordinator-card:active {
+    transform: translateY(-6px);
+    box-shadow: 0 0 30px rgba(255,215,0,0.6);
+}
+
+.coordinator-card h3 {
+    color: #ffd700;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.coordinator-card p {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.coordinator-card .phone {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+@media (max-width: 768px) {
+
+    .coordinator-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .coordinator-card {
+        padding: 24px 16px;
+    }
+}
+
+/* ================= SCROLL REVEAL ANIMATION ================= */
+
+.animate-item {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ================= COMMON HOVER GLOW EFFECT ================= */
+
+.glow-box {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.glow-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.7);
+}
+
+/* Mobile tap effect */
+.glow-box:active {
+    transform: translateY(-6px);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+}
+/* ================= TOP EVENT HEADER BAR ================= */
+
+.event-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #1a1d4d;
+    padding: 18px 40px;
+    color: white;
+}
+
+/* LEFT SIDE */
+.top-left h3 {
+    color: #ffd700;
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.top-left p {
+    font-size: 14px;
+    margin-bottom: 2px;
+    color: #e0e0e0;
+}
+
+.top-left span {
+    font-size: 13px;
+    color: #cfcfcf;
+}
+
+/* CENTER TEXT */
+.top-center {
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+    font-family: 'Georgia', serif;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .event-top-bar {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .top-center {
+        font-size: 28px;
+    }
+}
+/* ================= SIMPLE STICKY FEST HEADER ================= */
+
+.simple-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 40px;
+    background: #1a1d4d;
+}
+
+/* LEFT: COLLEGE NAME */
+.college-name h3 {
+    color: #ffd700;
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.college-name p {
+    font-size: 13px;
+    color: #e0e0e0;
+}
+
+.college-name span {
+    font-size: 12px;
+    color: #cfcfcf;
+}
+
+/* ================= SIMPLE FEST HEADER ================= */
+
+.college-block h3 {
+    color: #ffd700;
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.college-block p {
+    font-size: 11px;
+    margin: 0;
+    line-height: 1.2;
+    color: #e0e0e0;
+}
+
+.college-block span {
+    font-size: 10px;
+    margin: 0;
+    line-height: 1.2;
+    color: #cfcfcf;
+}
+
+/* CENTER */
+.fest-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 26px;
+    line-height: 1;
+    margin: 0;
+
+    color: white;
+    font-family: 'Samarkan', cursive;
+    letter-spacing: 1px;
+}
+
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .simple-header {
+        height: auto;
+        padding: 8px 12px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .fest-title {
+        position: static;
+        transform: none;
+        font-size: 22px;
+    }
+}
+@font-face {
+    font-family: 'Samarkan';
+    src: url('../fonts/Samarkan.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* ================= SOLO DANCE PAGE FOOTER ONLY ================= */
+
+.solo-footer {
+    background: #1a1d4d;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 80px;
+}
+
+.solo-footer-menu {
+    margin-bottom: 20px;
+}
+
+.solo-footer-menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 18px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.solo-footer-menu a:hover {
+    color: #ffd700;
+}
+
+.solo-footer p {
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+.solo-footer strong {
+    color: #ffd700;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .solo-footer-menu a {
+        display: inline-block;
+        margin: 8px 12px;
+        font-size: 16px;
+    }
+
+    .solo-footer p {
+        font-size: 15px;
+    }
+}
+
+/* CORRECT TOP SPACING FOR SOLO EVENT PAGE */
+.solo-page .event-detail {
+    padding-top: 100px;
+}
+/* ================= FIX SOLO DANCE PAGE HEADER ISSUE ================= */
+
+/* STOP AAVISHKAAR HERO FROM ENTERING NAVBAR */
+.solo-page #festHero {
+    position: static !important;
+    transform: none !important;
+    height: auto !important;
+}
+
+/* REMOVE HOME HERO SPACING */
+.solo-page .hero {
+    padding-top: 0 !important;
+}
+
+/* CORRECT TOP SPACE FOR SOLO PAGE CONTENT */
+.solo-page .event-detail {
+    padding-top: 80px !important;
+}
+/* ================= SOLO PAGE FINAL OVERRIDE ================= */
+
+/* Disable yellow hero-nav ONLY on solo page */
+.solo-page .hero-nav {
+    display: none !important;
+}
+
+/* Stop home hero spacing */
+.solo-page .hero {
+    padding-top: 0 !important;
+}
+
+/* Stop fest title navbar animation */
+.solo-page #festHero {
+    position: static !important;
+    transform: none !important;
+    height: auto !important;
+}
+
+/* Correct top spacing for solo content */
+.solo-page .event-detail {
+    padding-top: 80px !important;
+}
+/* STEP 4 FIX — SOLO PAGE HEADER */
+
+/* ================= FORCE COLLEGE TEXT SIZE (FINAL FIX) ================= */
+/* THIS MUST BE LAST IN FILE */
+
+.home-page .college-main {
+  font-family: "Times New Roman", serif;
+  font-size: 72px !important;
+  font-weight: 700 !important;
+  color: #1f3a8a !important;
+}
+
+.home-page .college-sub {
+  font-family: "Times New Roman", serif;
+  font-size: 36px !important;   /* ⬅ FIXED */
+  font-weight: 500 !important;
+  color: #1f3a8a !important;
+  margin-top: 6px;
+}
+
+.home-page .college-tag {
+  font-family: "Times New Roman", serif;
+  font-size: 32px !important;   /* ⬅ FIXED */
+  font-weight: 600 !important;
+  color: #f97316 !important;
+  margin-top: 4px;
+}
+@media (max-width: 768px) {
+
+  .home-page .college-main {
+    font-size: 28px !important;
+  }
+
+  .home-page .college-sub {
+    font-size: 18px !important;
+  }
+
+  .home-page .college-tag {
+    font-size: 16px !important;
+  }
+}
+/* ===== FINAL GOLD COLOR FIX (HOME HERO) ===== */
+
+.home-page .college-main {
+  color: #d4af37 !important;   /* GOLD */
+}
+
+.home-page .college-sub {
+  color: #d4af37 !important;   /* GOLD */
+}
+
+.home-page .college-tag {
+  color: #f97316 !important;   /* ORANGE (unchanged) */
+}
+/* ===== FORCE GAP BETWEEN AAVISHKAAR 2026 AND TAGLINE ===== */
+
+.home-page .tagline {
+    margin-top: 40px !important;   /* ⬅ GAP HERE */
+}
+@media (max-width: 768px) {
+    .home-page .tagline {
+        margin-top: 20px !important;
+    }
+}
+/* ===== REAL SIZE FIX FOR AAVISHKAAR 2026 ===== */
+
+.home-page .fest-title .fest-name,
+.home-page .fest-title .fest-year {
+    font-size: 125px !important;
+}
+@media (max-width: 768px) {
+  .home-page .fest-title .fest-name,
+  .home-page .fest-title .fest-year {
+    font-size: 60px !important;
+  }
+}
+/* GAP BETWEEN AAVISHKAAR 2026 AND TAGLINE */
+
+.home-page .fest-title {
+    margin-bottom: 50px !important;
+}
+@media (max-width: 768px) {
+    .home-page .fest-title {
+        margin-bottom: 25px !important;
+    }
+}
+/* ===== SHRINK AAVISHKAAR 2026 WHEN INSIDE NAVBAR ===== */
+
+/* ===== NAVBAR AAVISHKAAR 2026 — FINAL FIX ===== */
+
+/* Center perfectly */
+#festHero.in-nav {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Slightly bigger size (not huge) */
+#festHero.in-nav .fest-title {
+    font-size: 40px !important;   /* ⬅ increased a little */
+    line-height: 1 !important;
+    margin: 0 !important;
+}
+
+/* Ensure letters also scale */
+#festHero.in-nav .fest-title .fest-name,
+#festHero.in-nav .fest-title .fest-year {
+    font-size: 40px !important;
+    letter-spacing: 1.5px !important;
+}
+
+@media (max-width: 768px) {
+    #festHero.in-nav .fest-title,
+    #festHero.in-nav .fest-title .fest-name,
+    #festHero.in-nav .fest-title .fest-year {
+        font-size: 26px !important;
+    }
+}
+/* ================= SOLO PAGE HEADER VISIBILITY FIX ================= */
+/* Affects ONLY solo-dance page */
+
+/* ================= SOLO PAGE HEADER HEIGHT FIX ================= */
+/* ONLY affects solo-dance page */
+
+/* ================= SOLO PAGE — COMPACT BLUE HEADER ================= */
+/* ONLY solo pages — home page untouched */
+
+.solo-page .simple-header {
+    padding: 4px 20px !important;   /* 🔥 MAIN height control */
+    display: flex;
+    align-items: center;
+}
+
+/* College block — keep all lines visible but compact */
+.solo-page .simple-header .college-block {
+    line-height: 1.1 !important;
+}
+
+/* Vel Tech High Tech */
+.solo-page .simple-header .college-block h3 {
+    font-size: 15px !important;
+    margin: 0 !important;
+}
+
+/* Dr. Rangarajan Dr. Sakunthala Engineering College */
+.solo-page .simple-header .college-block p {
+    font-size: 11px !important;
+    margin: 0 !important;
+}
+
+/* An Autonomous Institution */
+.solo-page .simple-header .college-block span {
+    font-size: 10px !important;
+    margin: 0 !important;
+}
+
+/* Center aavishkaar text */
+.solo-page .simple-header .fest-title {
+    font-size: 22px !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+}
+/* ================= SOLO PAGE — FORCE COLLEGE TEXT VISIBILITY ================= */
+/* Do NOT change bar height, only shrink text */
+/* Home page unaffected */
+
+.solo-page .simple-header .college-block {
+    line-height: 1 !important;
+}
+
+/* Vel Tech High Tech */
+.solo-page .simple-header .college-block h3 {
+    font-size: 14px !important;
+    margin: 0 !important;
+}
+
+/* Dr. Rangarajan Dr. Sakunthala Engineering College */
+.solo-page .simple-header .college-block p {
+    font-size: 10px !important;
+    margin: 0 !important;
+}
+
+/* An Autonomous Institution */
+.solo-page .simple-header .college-block span {
+    font-size: 9px !important;
+    margin: 0 !important;
+}
+/* ================= SOLO PAGE — FORCE HEADER CONTENT VISIBLE ================= */
+/* NO height change | ONLY visibility fix */
+
+/* ================= SOLO PAGE — FORCE COLLEGE TEXT INSIDE BAR ================= */
+/* Left side, inside blue bar, bar height unchanged */
+
+
+/* LEFT: College block */
+.solo-page .simple-header .college-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* 🔥 keep text INSIDE bar */
+    max-width: 320px;
+}
+
+/* Text sizes — small but visible */
+.solo-page .simple-header .college-block h3 {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.solo-page .simple-header .college-block p {
+    font-size: 10px;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.solo-page .simple-header .college-block span {
+    font-size: 9px;
+    margin: 0;
+    line-height: 1.1;
+}
+
+/* CENTER: Fest title stays centered */
+.solo-page .simple-header .fest-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+}
+/* ================= SOLO PAGE — FORCE NAVBAR HEIGHT FIX ================= */
+/* Home page NOT affected */
+
+.solo-page .simple-header .college-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* ================= SOLO PAGE — FINAL HEADER FIX ================= */
+/* Home page NOT affected */
+
+.solo-page .simple-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+
+    background: #1a1d4d;
+
+    padding: 6px 24px;   /* 👈 same feel as home navbar */
+    height: auto;        /* 👈 NO forced height */
+}
+
+/* LEFT: College text (fully inside bar) */
+.solo-page .simple-header .college-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+/* Text sizes — small but fully visible */
+.solo-page .simple-header .college-block h3 {
+    font-size: 14px;
+    margin: 0;
+}
+
+.solo-page .simple-header .college-block p {
+    font-size: 10px;
+    margin: 0;
+}
+
+.solo-page .simple-header .college-block span {
+    font-size: 9px;
+    margin: 0;
+}
+
+/* CENTER: aavishkaar text */
+.solo-page .simple-header .fest-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    line-height: 1;
 }

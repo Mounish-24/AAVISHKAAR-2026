@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Solo Dance | AAVISHKAAR 2026</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="solo-page">
+    <!-- SIMPLE STICKY HEADER -->
+<header class="simple-header">
+
+    <div class="college-block">
+        <h3>Vel Tech High Tech</h3>
+        <p>Dr. Rangarajan Dr. Sakunthala Engineering College</p>
+        <span>An Autonomous Institution</span>
+    </div>
+
+    <div class="fest-title">
+        aavishkaar-2026
+    </div>
+
+</header>
+
+
+<section class="event-detail event-ref-page">
+
+    <!-- EVENT TITLE -->
+    <h1 class="event-title animate-item">SOLO DANCE</h1>
+
+    <!-- EVENT IMAGE -->
+    <img src="images/solo-dance.JPEG" 
+     alt="Solo Dance" 
+     class="event-image animate-item">
+
+    <!-- COORDINATORS -->
+    <!-- STUDENT COORDINATORS -->
+<h2 class="section-title animate-item">STUDENT COORDINATORS</h2>
+
+<div class="coordinator-grid">
+
+    <div class="coordinator-card animate-item glow-box">
+        <h3>Ms. Venanshiya</h3>
+        <p>ECE, III<sup>rd</sup> Year</p>
+        <p class="phone">6369453279</p>
+    </div>
+
+    <div class="coordinator-card animate-item glow-box">
+        <h3>Mr. Bharath. K</h3>
+        <p>ECE, I<sup>st</sup> Year</p>
+        <p class="phone">9514165856</p>
+    </div>
+<div class="coordinator-card animate-item glow-box">
+        <h3>Mr. Praveen Kumar. A</h3>
+        <p>ECE, III<sup>rd</sup> Year</p>
+        <p class="phone">9342018241</p>
+    </div>
+
+</div>
+
+    <!-- DESCRIPTION -->
+     <div class="event-box animate-item glow-box">
+    <h2 class="section-title">DESCRIPTION</h2>
+    <p class="event-description">
+        Step into the spotlight and let your talent shine! Solo Dance is a platform for
+        individual dancers to express their passion, creativity, and confidence through
+        movement. Participants will mesmerize the audience with their expressions, rhythm,
+        and stage presence.
+        <br><br>
+        From Classical and Semi-Classical to Hip-Hop, Freestyle, and Fusion — every style
+        is welcome!
+    </p>
+     </div>
+    <!-- RULES -->
+     <div class="event-box animate-item glow-box">
+    <h2 class="section-title">RULES &amp; GUIDELINES</h2>
+    <div class="rules-box">
+
+    <p><span>1) Participation:</span> This is a Solo Dance event; only one participant is allowed per performance.</p>
+
+    <p><span>2) Time Limit:</span> Maximum performance time is 6 minutes.</p>
+
+    <p><span>3) Rounds:</span> The event consists of two rounds –
+        Common Round and Adopti Tune Round.
+    </p>
+
+    <p><span>4) Music:</span> Song track must be in MP3 format and brought on a pen drive (mandatory).
+        The same track must also be emailed at least two days before the event to
+        <strong>xxxxxxxxx@gmail.com</strong>.
+    </p>
+
+    <p><span>5) Props:</span> Props are allowed but must be arranged by participants and used safely without damaging the stage.</p>
+
+    <p><span>6) Conduct:</span> Obscene gestures, inappropriate costumes, offensive lyrics,
+        or any indecent or violent behavior will lead to immediate disqualification.
+    </p>
+
+    <p><span>7) Time Violation:</span> Exceeding the time limit will result in point deductions.</p>
+
+    <p><span>8) Decision:</span> Judges’ decision is final and binding.</p>
+
+    <p><span>9) Certificates:</span> Certificates will be awarded to both winners and all participants.</p>
+
+</div>
+</div>
+
+<!-- PRIZES & REGISTRATION SECTION -->
+<section class="event-finance animate-item glow-box">
+
+    <!-- PRIZES BOX -->
+    <div class="prize-box glow-box">
+        <h2 class="prize-title">Prizes</h2>
+        <p><strong>Ist Prize</strong> – ₹ 3000</p>
+        <p><strong>IInd Prize</strong> – ₹ 2000</p>
+        <p><strong>IIIrd Prize</strong> – ₹ 1000</p>
+    </div>
+
+    <!-- FEE & DEADLINE -->
+    <div class="fee-deadline">
+        <p class="fee-text">
+            <strong>Registration Fee:</strong> ₹ 400 per Participant
+        </p>
+
+        <p class="deadline-text">
+            <strong>Registration Deadline:</strong> March 13, 2025
+        </p>
+    </div>
+
+    <!-- ON-SPOT INFO -->
+    <p class="onspot-text">
+        ON-SPOT REGISTRATION ARE AVAILABLE ON MARCH 15, 2025 BEFORE 9:30AM
+    </p>
+
+    
+
+    <!-- REGISTER BUTTON -->
+<div class="event-register">
+    <a href="register.html" class="btn orange">Register Now</a>
+</div>
+
+
+</section>
+<script>
+const animatedItems = document.querySelectorAll('.animate-item');
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.15 }
+);
+
+animatedItems.forEach(item => observer.observe(item));
+</script>
+<!-- SOLO DANCE PAGE FOOTER -->
+<div class="solo-footer">
+
+    <div class="solo-footer-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <p>
+        <strong>Contact:</strong>
+        aavishkaar@velhightech.com
+    </p>
+
+    <p>
+        <strong>Address:</strong>
+        60, Avadi-Vel Tech Road, Vel Nagar, Avadi,
+        Chennai, Tamil Nadu 600062
+    </p>
+
+</div>
+
+</body>
+</html>

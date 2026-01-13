@@ -6,13 +6,16 @@
     <title>AAVISHKAAR 2026 | Vel Tech High Tech</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="home-page">
 
 <nav class="navbar">
-    <div class="nav-brand">
-        <img src="images/logo.png" alt="AAVISHKAAR Logo">
-        <span>AAVISHKAAR 2026</span>
-    </div>
+    <div class="nav-college">
+    <div class="nav-college-main">Vel Tech High Tech</div>
+    <div class="nav-college-sub">Dr. Rangarajan Dr. Sakunthala Engineering College</div>
+    <div class="nav-college-tag">An Autonomous Institution</div>
+</div>
+<!-- CENTER SLOT FOR FEST TITLE -->
+<div class="nav-center-slot" id="navCenterSlot"></div>
 
     <ul>
     <li><a href="#home">Home</a></li>
@@ -26,12 +29,27 @@
 
 
 <section class="hero" id="home">
+    <div class="video-bg">
+        <video autoplay muted loop playsinline>
+            <source src="videos/bg.mp4" type="video/mp4">
+        </video>
+    </div>
 
     <div class="hero-box">
+         <!-- FULL WIDTH BAR BELOW AAVISHKAAR -->
+    <div class="hero-nav">
+    <a href="about.html">About Event</a>
+    <a href="cultural.html">Culturals</a>
+    <a href="contact.html">Contact</a>
+    <a href="day1.html">Day-1</a>
+    <a href="day2.html">Day-2</a>
+</div>
+
 
     <!-- COLLEGE NAME -->
-    <div class="college-block">
+    <div class="college-block" id="collegeBlock">
 
+        
    <h2 class="college-main">Vel Tech High Tech</h2>
 
     <p class="college-sub">
@@ -46,57 +64,37 @@
 
 
     <!-- FEST TITLE -->
-    <h1 class="fest-title">AAVISHKAAR <span>2026</span></h1>
+   <div class="fest-hero" id="festHero">
+    <h1 class="fest-title">
+  <span class="fest-name">aavishkaar</span>
+  <span class="fest-year">2026</span>
+</h1>
 
-    <p class="tagline">Unleash the Innovation • Celebrate the Talent</p>
-      <!-- FULL WIDTH BAR BELOW AAVISHKAAR -->
-    <div class="hero-nav">
-    <a href="about.html">About Event</a>
-    <a href="cultural.html">Culturals</a>
-    <a href="contact.html">Contact</a>
-    <a href="day1.html">Day-1</a>
-    <a href="day2.html">Day-2</a>
 </div>
+
+
+
+    <p class="tagline">Unleashed Vibes; Unmatched Energy This is our slogan so use this in website</p>
+    
     <p class="event-date">March 13<sup>th</sup>, 14<sup>th</sup> – 2026</p>
-
-<!-- CULTURAL HIGHLIGHTS Images -->
-<div class="cultural-cards">
-
-    <div class="culture-card">
-        <img src="images/dance.jpeg" alt="Dance">
-        <h3>Dance</h3>
-    </div>
-
-    <div class="culture-card">
-        <img src="images/singing.jpeg" alt="Singing">
-        <h3>Singing</h3>
-    </div>
-
-    <div class="culture-card">
-        <img src="images/rampwalk.jpeg" alt="Ramp Walk">
-        <h3>Ramp Walk</h3>
-    </div>
-
-    <div class="culture-card">
-        <img src="images/shortfilm.jpeg" alt="Short Film">
-        <h3>Short Film</h3>
-    </div>
-
-</div>
 
 
 <!-- CTA BUTTONS -->
 <div class="buttons">
-    <a href="register.html" class="btn orange">Register Now</a>
-    <a href="events.html" class="btn blue">Explore Events</a>
-</div>
 
+    <a href="register.html" class="btn orange">Register Now</a>
+
+    <!-- WATCH VIDEO BUTTON -->
+    <button class="watch-btn" onclick="openPromo()">▶</button>
+
+    <a href="events.html" class="btn blue">Explore Events</a>
+
+</div>
 
 
 </div>
 
 </section>
-
 <section class="process-section">
     <h2 class="section-title">YOUR PROCESS</h2>
 
@@ -234,6 +232,46 @@
     });
 
     galleryObserver.observe(gallery);
+</script>
+<script>
+const festHero = document.getElementById("festHero");
+const collegeBlock = document.getElementById("collegeBlock");
+const navbar = document.querySelector(".navbar");
+
+if (festHero && collegeBlock && navbar) {
+    window.addEventListener("scroll", () => {
+        const collegeBottom = collegeBlock.getBoundingClientRect().bottom;
+        const navHeight = navbar.offsetHeight;
+
+        if (collegeBottom <= navHeight) {
+            festHero.classList.add("in-nav");
+        } else {
+            festHero.classList.remove("in-nav");
+        }
+    });
+}
+</script>
+
+
+<!-- PROMO VIDEO MODAL -->
+<div class="promo-modal" id="promoModal">
+    <span class="promo-close" onclick="closePromo()">×</span>
+    <video controls autoplay>
+        <source src="videos/promo.mp4" type="video/mp4">
+    </video>
+</div>
+<script>
+function openPromo() {
+    document.getElementById("promoModal").style.display = "flex";
+}
+
+function closePromo() {
+    const modal = document.getElementById("promoModal");
+    const video = modal.querySelector("video");
+    video.pause();
+    video.currentTime = 0;
+    modal.style.display = "none";
+}
 </script>
 
 </body>
