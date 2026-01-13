@@ -2187,3 +2187,76 @@ section, footer {
     font-size: 22px;
     line-height: 1;
 }
+/* ================= SOLO PAGE — REMOVE CURVED BACKGROUND ================= */
+/* Home page NOT affected */
+
+.solo-page body {
+    background:
+        linear-gradient(135deg, #05010f, #12002b, #05010f) !important;
+}
+
+.solo-page .navbar,
+.solo-page .simple-header {
+    background: #1a1d4d !important;   /* solid blue */
+    backdrop-filter: none !important;
+}
+/* ================= SOLO PAGE — FLAT HEADER FIX ================= */
+/* This removes the curved background under the header */
+
+.solo-page .solo-header-fix {
+    height: 56px;                 /* navbar-like height */
+    width: 100%;
+    background: #1a1d4d;          /* SAME blue as header */
+    position: relative;
+    z-index: 1;
+}
+
+/* Push hero down so it starts AFTER the flat strip */
+.solo-page .hero {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+/* ================= SOLO PAGE — FINAL BAR FIX (NO CURVE, NO EXTRA SPACE) ================= */
+
+.solo-page {
+    background: #05010f !important; /* kill radial curve illusion */
+}
+
+/* Header bar */
+.solo-page .simple-header {
+    background: #1a1d4d !important;
+    padding: 6px 24px !important;   /* navbar-like height */
+    align-items: center;
+}
+
+/* REMOVE any gap below header */
+.solo-page .simple-header + * {
+    margin-top: 0 !important;
+}
+
+/* College text fully inside bar */
+.solo-page .simple-header .college-block {
+    margin: 0 !important;
+    line-height: 1.1;
+}
+
+.solo-page .simple-header .college-block h3 {
+    font-size: 14px;
+    margin: 0;
+}
+
+.solo-page .simple-header .college-block p {
+    font-size: 10px;
+    margin: 0;
+}
+
+.solo-page .simple-header .college-block span {
+    font-size: 9px;
+    margin: 0;
+}
+
+/* Center aavishkaar */
+.solo-page .simple-header .fest-title {
+    font-size: 22px;
+    line-height: 1;
+}
