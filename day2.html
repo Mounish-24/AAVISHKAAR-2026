@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Culturals | AAVISHKAAR 2026</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="solo-page">
+
+<a href="index.html" class="back-btn">← Back</a>
+
+<header class="simple-header">
+    <div class="college-block">
+        <h3>Vel Tech High Tech</h3>
+        <p>Dr. Rangarajan Dr. Sakunthala Engineering College</p>
+        <span>An Autonomous Institution</span>
+    </div>
+
+    <div class="fest-title">
+        aavishkaar-2026
+    </div>
+</header>
+
+
+
+<!-- ================= CULTURALS CONTENT ================= -->
+<section class="event-detail event-ref-page">
+
+    <!-- PAGE TITLE -->
+    <h1 class="event-title animate-item">Culturals Day2</h1>
+
+    <!-- DESCRIPTION -->
+    <p class="event-description animate-item">
+        Showcase your dance moves in Group Dance or Solo Dance (Fusion),
+        captivate with your voice in Group Singing (Band) and Solo Singing,
+        or express your artistic vision through Short Film, Photography,
+        and Channel Surfing. Test your intellect in Quiz Competition,
+        game your way to glory in E-Sports, or dazzle with confidence in
+        the Ramp Walk.
+        <br><br>
+        Join us at Aavishkaar-2026 and let your creativity and passion shine!
+    </p>
+
+    <!-- ================= FACULTY COORDINATORS ================= -->
+    <h2 class="section-title animate-item">Faculty Coordinator</h2>
+
+    <div class="coordinator-grid">
+
+        <div class="coordinator-card glow-box animate-item">
+            <h3>Dr. M. Gopinath</h3>
+            <p>Dean – Cultural Clubs & Activities (CCA)</p>
+            <p class="phone">9994041130</p>
+        </div>
+
+        <div class="coordinator-card glow-box animate-item">
+            <h3>Dr. D.S. Manoj Kumar</h3>
+            <p>Head – AIML</p>
+        </div>
+
+        <div class="coordinator-card glow-box animate-item">
+            <h3>Mrs. L. Geetha</h3>
+            <p>Head – AI & DS</p>
+        </div>
+
+    </div>
+
+    <!-- ================= STUDENT COORDINATORS ================= -->
+    <h2 class="section-title animate-item">Student Coordinator</h2>
+
+    <div class="coordinator-grid">
+
+        <div class="coordinator-card glow-box animate-item">Student Coordinator 1</div>
+        <div class="coordinator-card glow-box animate-item">Student Coordinator 2</div>
+        <div class="coordinator-card glow-box animate-item">Student Coordinator 3</div>
+        <div class="coordinator-card glow-box animate-item">Student Coordinator 4</div>
+
+    </div>
+
+    <!-- ================= OUR EVENTS ================= -->
+    <h2 class="section-title animate-item">Our Events</h2>
+
+    <!-- ================= SOLO EVENTS ================= -->
+    <h3 class="event-subtitle animate-item">Solo Events</h3>
+
+    <div class="events-grid triple animate-item">
+
+        <a href="stall.html" class="event-card-link">
+        <div class="event-card">
+            <img src="images/stall1.png">
+            <h3 class="event-name">Stall</h3>
+        </div>
+    </a>
+
+        <a href="ramp-walk.html" class="event-card-link">
+        <div class="event-card">
+            <img src="images/ramp-walk1.jpg">
+            <h3 class="event-name">Ramp Walk</h3>
+        </div>
+    </a>
+
+
+</section>
+
+<!-- ================= FOOTER (SAME AS SOLO-DANCE) ================= -->
+<div class="solo-footer">
+
+    <div class="solo-footer-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <p><strong>Contact:</strong> aavishkaar@velhightech.com</p>
+
+    <p>
+        <strong>Address:</strong>
+        60, Avadi-Vel Tech Road, Vel Nagar, Avadi,
+        Chennai, Tamil Nadu 600062
+    </p>
+
+</div>
+
+<!-- ================= SCROLL ANIMATION ================= -->
+<script>
+const animatedItems = document.querySelectorAll('.animate-item');
+
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.15 }
+);
+
+animatedItems.forEach(item => observer.observe(item));
+</script>
+
+</body>
+</html>

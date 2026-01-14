@@ -2617,4 +2617,27 @@ html, body {
     align-items: center;
     justify-content: center;
 }
+/* Prevent home navbar styles from affecting other pages */
+body:not(.home-page) .navbar {
+    display: none;
+}
+
+/* Ensure simple header starts at top */
+.simple-header {
+    margin-top: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.events-grid.triple{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+@media (max-width: 768px){
+    .events-grid.triple{
+        gap: 30px;
+        flex-direction: column;
+    }
+}
 
