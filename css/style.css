@@ -2601,4 +2601,20 @@ html, body {
     text-decoration: none;
 }
 
+/* 3 cards in a row for Solo Events */
+.events-grid.triple {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* empty future card */
+.event-card.empty-card {
+    border: 2px dashed rgba(255,255,255,0.3);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
