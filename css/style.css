@@ -2641,3 +2641,118 @@ body:not(.home-page) .navbar {
     }
 }
 
+/* =====================================
+   UNIVERSAL MOBILE OVERRIDE – FINAL
+   ===================================== */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* EVENTS GRID – FORCE CLEAN MOBILE */
+    .events-grid,
+    .events-grid.triple {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 24px !important;
+        padding: 0 16px !important;
+    }
+
+    /* EACH EVENT LINK FULL WIDTH */
+    .event-card-link {
+        width: 100% !important;
+        max-width: 420px !important;
+    }
+
+    /* EVENT CARD */
+    .event-card {
+        width: 100% !important;
+        border-radius: 18px;
+        overflow: hidden;
+    }
+
+    /* IMAGE */
+    .event-card img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* EVENT NAME */
+    .event-name {
+        text-align: center;
+        font-size: 18px;
+        margin: 12px 0 6px;
+    }
+
+}
+/* ===============================
+   MOBILE HEADER CLEANUP
+   =============================== */
+@media (max-width: 768px) {
+
+    /* Hide college name lines */
+    .college-name,
+    .college-title,
+    .college-subtitle,
+    .institute-name,
+    .autonomous-text {
+        display: none !important;
+    }
+
+    /* Ensure AAVISHKAAR 2026 stays visible & centered */
+    .aavishkaar-title,
+    .event-title,
+    .site-title {
+        display: block !important;
+        text-align: center;
+        font-size: 22px;
+        line-height: 1.2;
+    }
+}
+/* =====================================
+   MOBILE: SHOW ONLY AAVISHKAAR 2026
+   ===================================== */
+@media (max-width: 768px) {
+
+    /* Hide college name block */
+    .college-block {
+        display: none !important;
+    }
+
+    /* Center and emphasize fest title */
+    .fest-title {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        font-size: 22px;
+        line-height: 1.2;
+        margin: 10px 0;
+    }
+
+    /* Header spacing fix */
+    .simple-header {
+        padding: 12px 0;
+    }
+}
+/* =====================================
+   MOBILE HEADER HEIGHT & CLARITY FIX
+   ===================================== */
+@media (max-width: 768px) {
+
+    .simple-header {
+        padding: 18px 0 20px 0;   /* increases bar height */
+        min-height: 60px;        /* ensures enough space */
+    }
+
+    .fest-title {
+        font-size: 24px;         /* clearer text */
+        line-height: 1.3;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+
+}
